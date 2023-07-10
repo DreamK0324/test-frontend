@@ -11,11 +11,11 @@ const HomePageView = () => {
     
       <br/>
       <div style={{ marginBottom: '10px' }}>
-        <Link to="/employees">All Employees</Link>
+        <Link to="/movies">All Movies</Link>
       </div>
       <br/>
       <div>
-        <Link to="/tasks">All Tasks</Link>
+        <Link to="/users">All Users</Link>
       </div>
     </div>
   );    
