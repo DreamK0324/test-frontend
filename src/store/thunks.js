@@ -87,7 +87,7 @@ export const fetchAllMoviesThunk = () => async (dispatch) => {
 };
 
 export const addMovieThunk = (movie) => async (dispatch) => {
-  // movie = { title: "CSCI 127" }
+  // movie = { title: " xx" }
   try {
     let res = await axios.post(`${path}/movies`, movie);
     dispatch(ac.addMovie(res.data));

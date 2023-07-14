@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
-//import { useDispatch, useSelector } from "react-redux";
-import { fetchAllUsersThunk, deleteUserThunk } from "../../store/thunks";
-import { AllUsersView } from "../views";
 import { connect } from 'react-redux';
+//import { useDispatch, useSelector } from "react-redux";
+
+import { 
+  fetchAllUsersThunk, 
+  deleteUserThunk 
+} from "../../store/thunks";
+
+import { AllUsersView } from "../views";
+
 
 const AllUsersContainer = ({ fetchAllUsers, allUsers, deleteUser }) => {
   useEffect(() => {

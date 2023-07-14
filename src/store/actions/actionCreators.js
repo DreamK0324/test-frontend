@@ -13,6 +13,14 @@ export const fetchAllUsers = (users) => {
     };
 };
 
+//Single user
+export const fetchUser = (user) => {
+    return {
+        type: at.FETCH_USER,
+        payload: user,
+    };
+};
+
 // Add User
 export const addUser = (user) => {
     return {
@@ -37,13 +45,7 @@ export const editUser = (user) => {
     };
 };
 
-//Single user
-export const fetchUser = (user) => {
-    return {
-        type: at.FETCH_USER,
-        payload: user,
-    };
-};
+
 
 ////////////////////////////////////////////////////////////////
 
@@ -52,6 +54,14 @@ export const fetchAllMovies = (movies) => {
     return {
         type: at.FETCH_ALL_MOVIES,
         payload: movies,
+    };
+};
+
+//Single movie
+export const fetchMovie = (movie) => {
+    return {
+        type: at.FETCH_MOVIE,
+        payload: movie,
     };
 };
 
@@ -77,10 +87,4 @@ export const editMovie = (movie) => {
     };
 };
 
-//Single movie
-export const fetchMovie = (movie) => {
-    return {
-        type: at.FETCH_MOVIE,
-        payload: movie,
-    };
-};
+

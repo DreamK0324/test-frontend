@@ -1,12 +1,14 @@
 import "./App.css";
 
 //Router
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 //Components
 import {
   HomePageContainer,
   AllMoviesContainer,
+  // MovieContainer,
   AllUsersContainer,
+  UserContainer,
 } from './components/containers';
 
 import { Provider } from 'react-redux'; // Import the Provider component
@@ -22,15 +24,23 @@ const App = () => {
       <div className="App">
         <Router>
           <Routes>
-            <Route path="/" element={<HomePageContainer />} />
-            <Route path="/movies" element={<AllMoviesContainer />} />
-            <Route path="/users" element={<AllUsersContainer />} />
+            <Route exact path="/" element={<HomePageContainer />} />
+
+            <Route exact path="/movies" element={<AllMoviesContainer />} />
+            {/* <Route exact path="/movie/:id" element={<MovieContainer />} /> */}
+
+            <Route exact path="/users" element={<AllUsersContainer />} />
+            <Route exact path="/user/:id" element={<UserContainer />} />
+
           </Routes>
         </Router>
       </div>
     </Provider>
   );
 }
+
+
+
 
 
 export default App;

@@ -1,17 +1,17 @@
-//import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+
 const AllUsersView = (props) => {
   let { users, deleteUser } = props;
 
   if (!users.length) {
     return (
       <div>
-        <p>There are no user.</p>
-        <Link to={'/newuser'}>
+        <p>There are no users.</p>
+        <Link to="/newuser">
           <button>Add New User</button>
         </Link>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <Link to="/">Home Page</Link>
       </div>
     );
@@ -24,33 +24,24 @@ const AllUsersView = (props) => {
         let name = user.firstname + " " + user.lastname;
         return (
           <div key={user.id}>
-          <Link to={`/user/${user.id}`}>
-            {"   "+name+"   "}
-          </Link>
-          <button onClick={() => { deleteUser(user.id); window.location.reload(); }}>X</button>
-          <p>ID: {user.id}</p>
-          <p>Email: {user.email}</p>
-          <h3>------------------------</h3>
-        </div>
+            <Link to={`/user/${user.id}`}>{name}</Link>
+            <button onClick={() => { deleteUser(user.id); window.location.reload(); }}>X</button>
+            <p>ID: {user.id}</p>
+            <p>Email: {user.email}</p>
+            <h3>------------------------</h3>
+          </div>
         );
       })}
-      <br/>
-      <br/>
-      <Link to={'/newuser'}>
-          <button>Add New User</button>
+      <br />
+      <br />
+      <Link to="/newuser">
+        <button>Add New User</button>
       </Link>
-      <br/>
-      <br/>
-      <Link to={`/`}>
-        Go Home
-      </Link>
-
+      <br />
+      <br />
+      <Link to="/">Go Home</Link>
     </div>
   );
 };
-
-// AllUsersView.propTypes = {
-//   allUsers: PropTypes.array.isRequired,
-// };
 
 export default AllUsersView;
