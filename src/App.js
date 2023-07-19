@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {
   HomePageContainer,
   AllMoviesContainer,
-  // MovieContainer,
+  MovieContainer,
   AllUsersContainer,
   UserContainer,
 } from './components/containers';
@@ -27,7 +27,7 @@ const App = () => {
             <Route exact path="/" element={<HomePageContainer />} />
 
             <Route exact path="/movies" element={<AllMoviesContainer />} />
-            {/* <Route exact path="/movie/:id" element={<MovieContainer />} /> */}
+            <Route exact path="/movie/:id" element={<MovieContainer />} />
 
             <Route exact path="/users" element={<AllUsersContainer />} />
             <Route exact path="/user/:id" element={<UserContainer />} />
