@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 const AllMoviesView = (props) => {
   let {movies, deleteMovie} = props;
   //movies = [{id: 300, title: "hello"}]
+
+  // Sort the movies array based on the "id" property in decreasing order
+  movies.sort((a, b) => b.id - a.id);
+
   if (!movies.length) {
     return (
     <div>

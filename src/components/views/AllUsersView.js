@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 const AllUsersView = (props) => {
   let { users, deleteUser } = props;
 
+  // Sort the users array based on the "id" property in ascending order
+  users.sort((a, b) => a.id - b.id);
+
   if (!users.length) {
     return (
       <div>

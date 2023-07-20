@@ -5,10 +5,14 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 //Components
 import {
   HomePageContainer,
+
   AllMoviesContainer,
   MovieContainer,
+  NewMovieContainer,
+
   AllUsersContainer,
   UserContainer,
+  NewUserContainer,
 } from './components/containers';
 
 import { Provider } from 'react-redux'; // Import the Provider component
@@ -28,9 +32,11 @@ const App = () => {
 
             <Route exact path="/movies" element={<AllMoviesContainer />} />
             <Route exact path="/movie/:id" element={<MovieContainer />} />
+            <Route exact path="/newmovie" element={<NewMovieContainer />} />
 
             <Route exact path="/users" element={<AllUsersContainer />} />
             <Route exact path="/user/:id" element={<UserContainer />} />
+            <Route exact path="/newuser" element={<NewUserContainer />} />
 
           </Routes>
         </Router>
