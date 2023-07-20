@@ -7,7 +7,6 @@ import {
 } from '../../store/thunks';
 
 import AllMoviesView from '../views/AllMoviesView';
-//import { fetchAllMovies } from '../../store/actions/actionCreators';
 
 const AllMoviesContainer = ({ fetchAllMovies, allMovies, deleteMovie }) => {
   useEffect(() => {
