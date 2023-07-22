@@ -69,7 +69,7 @@ export const deleteUserThunk = userId => async dispatch => {
 export const editUserThunk = user => async dispatch => {
   try {
     let res = await axios.put(`${path}/users/${user.id}`, user);
-    //res.data is the updated course object
+    //res.data is the updated user object
     dispatch(ac.editUser(res.data));
   } catch(err) {
     console.error(err);
