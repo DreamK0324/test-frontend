@@ -9,10 +9,12 @@ import {
   AllMoviesContainer,
   MovieContainer,
   NewMovieContainer,
+  EditMovieContainer,
 
   AllUsersContainer,
   UserContainer,
   NewUserContainer,
+  EditUserContainer,
 } from './components/containers';
 
 import { Provider } from 'react-redux'; // Import the Provider component
@@ -33,11 +35,14 @@ const App = () => {
             <Route exact path="/movies" element={<AllMoviesContainer />} />
             <Route exact path="/movie/:id" element={<MovieContainer />} />
             <Route exact path="/newmovie" element={<NewMovieContainer />} />
+            <Route exact path="/editmovie" element={<EditMovieContainer />} />
+
 
             <Route exact path="/users" element={<AllUsersContainer />} />
             <Route exact path="/user/:id" element={<UserContainer />} />
             <Route exact path="/newuser" element={<NewUserContainer />} />
-
+            <Route exact path="/edituser" element={<EditUserContainer />} />
+            
           </Routes>
         </Router>
       </div>

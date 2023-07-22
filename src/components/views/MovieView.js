@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieView = ({ movie }) => {
+const MovieView = ({ movie, user }) => {
   console.log('Movie:', movie);
 
   if (!movie) {
@@ -9,7 +8,7 @@ const MovieView = ({ movie }) => {
     return <div>Loading...</div>;
   }
 
-  const { id, title, releaseDate, rate } = movie;
+  const { id, title, releaseDate, rate, userId } = movie;
 
   console.log('Movie ID:', id);
   console.log('Title:', title);
@@ -23,7 +22,20 @@ const MovieView = ({ movie }) => {
       <p>Title: {title}</p>
       <p>Release Date: {releaseDate}</p>
       <p>Rate: {rate}</p>
+
+      {userId ? (
+        <h3>
+          User: {user.firstname} {user.lastname} 
+        </h3>
+      ) : (
+        <h3>No User</h3>
+      )}
+      
+      <Link to="/editmovie">Edit Information</Link>
+      <br/>
       <Link to="/movies">Back to All Movies</Link>
+      <br/>
+      <Link to="/">Go Home</Link>
     </div>
   );
 };
