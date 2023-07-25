@@ -24,7 +24,7 @@ const NewMovieView = (props) => {
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Rate: </label>
-          <input type="float" name="rate" onChange={(e) => handleChange(e)} />
+          <input type="number" name="rate" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useParams } from 'react-router-dom';
-import { editMovie } from "../../store/actions/actionCreators";
 import { UserView } from "../views";
 import { 
   fetchUserThunk,
@@ -11,7 +10,7 @@ import {
 
 
 
-const UserContainer = ({ fetchUser, user, allMovies, fetchMovies }) => {
+const UserContainer = ({ fetchUser, user, allMovies, fetchMovies, editMovie }) => {
   const { id } = useParams();
 
   useEffect(() => {

@@ -35,13 +35,13 @@ const App = () => {
             <Route exact path="/movies" element={<AllMoviesContainer />} />
             <Route exact path="/movie/:id" element={<MovieContainer />} />
             <Route exact path="/newmovie" element={<NewMovieContainer />} />
-            <Route exact path="/editmovie" element={<EditMovieContainer />} />
+            <Route exact path="/editmovie/:id" element={<EditMovieContainer />} />
 
 
             <Route exact path="/users" element={<AllUsersContainer />} />
             <Route exact path="/user/:id" element={<UserContainer />} />
             <Route exact path="/newuser" element={<NewUserContainer />} />
-            <Route exact path="/edituser" element={<EditUserContainer />} />
+            <Route exact path="/edituser/:id" element={<EditUserContainer />} />
             
           </Routes>
         </Router>
