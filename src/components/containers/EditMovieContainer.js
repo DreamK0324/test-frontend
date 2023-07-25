@@ -8,14 +8,14 @@ import {
     fetchAllUsersThunk 
 } from '../../store/thunks';
 
-const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
+const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers, allUsers }) => {
     const { id } = useParams();
 
     const [formData, setFormData] = useState({
         title: "",
         releaseDate: "",
         rate: "",
-        userID: "",
+        userId: "",
         error: ""
     });
 
@@ -29,6 +29,7 @@ const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
             title: movie.title,
             releaseDate: movie.releaseDate,
             rate: movie.rate,
+            userId: movie.userId !== null ? movie.userId.toString() : "",
         });
     }, [movie]);
 
@@ -63,7 +64,7 @@ const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
             title: formData.title,
             releaseDate: formData.releaseDate,
             rate: formData.rate,
-            userId: formData.userId,
+            userId: parseInt(formData.userId), 
         };
 
         editMovie(updatedMovie);
@@ -88,10 +89,24 @@ const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
                 <input type="number" name="rate" value={formData.rate} placeholder={movie.rate} onChange={(e) => handleChange(e)} />
                 <br />
                 <br />
-                <label style={{ color: '#11153e', fontWeight: 'bold' }}>Rate: </label>
-                <input type="number" name="userId" value={formData.userId} placeholder={movie.userId} onChange={(e) => handleChange(e)} />
+                <label style={{ color: '#11153e', fontWeight: 'bold' }}>Select User: </label>
+                <select
+                    name="userId"
+                    value={formData.userId}
+                    onChange={(e) => handleChange(e)}
+                >
+                    <option value="">None</option>
+                    {allUsers.map((user) => (
+                        <option key={user.id} value={user.id}>
+                            {user.firstname} {user.lastname}
+                        </option>
+                    ))}
+                </select>
                 <br />
                 <br />
+                
+                <br/>
+                <br/>
 
                 <button type="submit">
                     Submit
@@ -119,6 +134,7 @@ const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
 const mapState = (state) => {
     return {
         movie: state.movie,
+        allUsers: state.allUsers,
     };
 };
 

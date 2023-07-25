@@ -9,7 +9,7 @@ const UserView = ({ user, editMovie, allMovies }) => {
     console.log('User is null or undefined');
     return <div>Loading...</div>;
   }
-
+ 
   // console.log('User ID:', id);
   // console.log('First Name:', firstname);
   // console.log('Last Name:', lastname);
@@ -53,7 +53,6 @@ const UserView = ({ user, editMovie, allMovies }) => {
                     <button
                       onClick={() => {
                         editMovie({ id: movie.id, userId: null });
-                        // window.location.reload();
                       }}
                     >
                       X
@@ -76,7 +75,6 @@ const UserView = ({ user, editMovie, allMovies }) => {
                 onClick={() => {
                   if (movie.userId === null) {
                     editMovie({ id: movie.id, userId: user.id });
-                    // window.location.reload();
                   } else {
                     alert("This movie is already assigned to another user.");
                   }
