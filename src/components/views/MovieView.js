@@ -31,7 +31,7 @@ const MovieView = ({ movie, user }) => {
         <h3>No User</h3>
       )}
       
-      <Link to="/editmovie">Edit Information</Link>
+      <Link to={`/editmovie/${id}`}>Edit Information</Link>
       <br/>
       <Link to="/movies">Back to All Movies</Link>
       <br/>
