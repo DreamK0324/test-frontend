@@ -8,7 +8,7 @@ import {
 } from "../../store/thunks";
 
 
-const MovieContainer = ({ fetchMovie, movie, fetchUser, user }) => {
+const MovieContainer = ({ fetchMovie, movie, fetchUser, user, allUsers }) => {
   const { id } = useParams();
 
   const [isMovieLoaded, setIsMovieLoaded] = useState(false);
@@ -29,6 +29,7 @@ const MovieContainer = ({ fetchMovie, movie, fetchUser, user }) => {
     <MovieView 
       movie={movie} 
       user={user}
+      allUsers={allUsers}
     />
   );
 };
@@ -38,6 +39,7 @@ const mapState = (state) => {
   return {
     movie: state.movie,
     user: state.user,
+    allUsers: state.allUsers,
   };
 };
 
