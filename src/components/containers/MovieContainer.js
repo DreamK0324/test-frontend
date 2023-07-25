@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { MovieView } from "../views";
@@ -11,10 +11,19 @@ import {
 const MovieContainer = ({ fetchMovie, movie, fetchUser, user }) => {
   const { id } = useParams();
 
+  const [isMovieLoaded, setIsMovieLoaded] = useState(false);
+
   useEffect(() => {
     fetchMovie(id);
-    fetchUser(movie.userId);
-  }, [fetchMovie, fetchUser, id, movie]);
+  }, [fetchMovie, id]);
+
+  useEffect(() => {
+    // Fetch the user only when the movie data is loaded
+    if (movie && movie.userId && !isMovieLoaded) {
+      fetchUser(movie.userId);
+      setIsMovieLoaded(true);
+    }
+  }, [fetchUser, movie, isMovieLoaded]);
 
   return (
     <MovieView 

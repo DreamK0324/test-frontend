@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const MovieView = ({ movie, user }) => {
-  console.log('Movie:', movie);
+  // console.log('Movie:', movie);
 
   if (!movie) {
     console.log('Movie is null or undefined');
@@ -10,10 +10,10 @@ const MovieView = ({ movie, user }) => {
 
   const { id, title, releaseDate, rate, userId } = movie;
 
-  console.log('Movie ID:', id);
-  console.log('Title:', title);
-  console.log('Release Date:', releaseDate);
-  console.log('Rate:', rate);
+  // console.log('Movie ID:', id);
+  // console.log('Title:', title);
+  // console.log('Release Date:', releaseDate);
+  // console.log('Rate:', rate);
 
   return (
     <div>
@@ -25,6 +25,8 @@ const MovieView = ({ movie, user }) => {
 
       {userId ? (
         <h3>
+          UserId: {userId}
+          <br/>
           User: {user.firstname} {user.lastname} 
         </h3>
       ) : (

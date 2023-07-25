@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 
-import { editMovieThunk, fetchMovieThunk, fetchAllUsersThunk } from '../../store/thunks';
+import { 
+    editMovieThunk,
+    fetchMovieThunk, 
+    fetchAllUsersThunk 
+} from '../../store/thunks';
 
 const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
     const { id } = useParams();
@@ -11,6 +15,7 @@ const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
         title: "",
         releaseDate: "",
         rate: "",
+        userID: "",
         error: ""
     });
 
@@ -58,6 +63,7 @@ const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
             title: formData.title,
             releaseDate: formData.releaseDate,
             rate: formData.rate,
+            userId: formData.userId,
         };
 
         editMovie(updatedMovie);
@@ -80,6 +86,10 @@ const EditMovieContainer = ({ movie, fetchMovie, editMovie, fetchUsers }) => {
                 <br />
                 <label style={{ color: '#11153e', fontWeight: 'bold' }}>Rate: </label>
                 <input type="number" name="rate" value={formData.rate} placeholder={movie.rate} onChange={(e) => handleChange(e)} />
+                <br />
+                <br />
+                <label style={{ color: '#11153e', fontWeight: 'bold' }}>Rate: </label>
+                <input type="number" name="userId" value={formData.userId} placeholder={movie.userId} onChange={(e) => handleChange(e)} />
                 <br />
                 <br />
 
